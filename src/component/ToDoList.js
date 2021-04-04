@@ -1,15 +1,24 @@
-// import { useState } from "react";
+import PropTypes from "prop-types";
+import { List } from "./List";
 
-export function ToDoList({ items }) {
+export function ToDoList({ items ,setItems}) {
   return (
     <div>
       {items && (
         <ul>
           {items.map((item) => (
-            <li key={item}>{item}</li>
+            <List item={item} items={items} setItems={setItems} />
           ))}
         </ul>
       )}
     </div>
   );
+}
+
+ToDoList.propTypes={
+  items: PropTypes.shape({
+    text:PropTypes.string,
+    completed: PropTypes.bool,
+  }),
+  setItems: PropTypes.func,
 }
