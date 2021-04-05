@@ -202,3 +202,8 @@ button:hover {
 .App {
   text-align: center;
 }
+
+
+.completed{
+  opacity: 50%;
+}
