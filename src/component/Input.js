@@ -5,11 +5,9 @@ import { List } from "./List";
 export function Input() {
   const [value, setValue] = useState("");
   const [items, setItems] = useState([]);
+  // const [completedItems, setCompletedItems] = useState([]);
+  // const [incompletedItems, setIncompletedItems] = useState([]);
   const [status, setStatus] = useState("");
-
-  // useEffect(() => {
-  //   setItems();
-  // }, [status, items]);
 
   return (
     <div>
@@ -48,7 +46,51 @@ export function Input() {
           </select>
         </div>
       </div>
-      <ToDoList items={items} setItems={setItems} />
+      {/* {() => {
+        <h1>helloworld</h1>
+        if (status === "completed") {
+          items.map((item) => {
+            if (item.completed === true) {
+              setCompletedItems([...completedItems, item]);
+            }
+          });
+          <ToDoList items={completedItems} setItems={setCompletedItems} />;
+        } else if (status === "incompleted") {
+          items.map((item) => {
+            if (item.completed === false) {
+              setIncompletedItems([...incompletedItems, item]);
+            }
+          });
+          <ToDoList items={incompletedItems} setItems={setIncompletedItems} />;
+        }
+        else{
+          <ToDoList items={items} setItems={setItems} />;
+        }
+      }} */}
+      {/* {()=>{
+        switch (status) {
+          case "completed":
+            items.map((item) => {
+              if (item.completed === true) {
+                setCompletedItems([...completedItems, item]);
+              }
+            });
+            <ToDoList items={completedItems} setItems={setCompletedItems} />;
+            break;
+            case "incompleted":
+              items.map((item) => {
+                if (item.completed === false) {
+                  setIncompletedItems([...incompletedItems, item]);
+                }
+              });
+              <ToDoList items={incompletedItems} setItems={setIncompletedItems} />;
+              break;
+          default:
+            <ToDoList items={items} setItems={setItems} />;
+            break;
+        }
+      }} */}
+      <ToDoList items={items} setItems={setItems} />;
     </div>
   );
 }
